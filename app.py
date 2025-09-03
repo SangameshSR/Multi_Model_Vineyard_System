@@ -13,6 +13,7 @@ from PIL import Image
 import io
 import time
 
+
 # ----------------------------
 # Initialize Flask app
 # ----------------------------
@@ -95,12 +96,12 @@ def userlogg():
 # ----------------------------
 @app.route('/graph.html', methods=['GET', 'POST'])
 def graph():
-    images = [
-        'http://127.0.0.1:5000/static/accuracy_plot.png',
-        'http://127.0.0.1:5000/static/loss_plot.png',
-        'http://127.0.0.1:5000/static/confusion_matrix.png',
-        'http://127.0.0.1:5000/static/f1-scor.jpeg'
-    ]
+   images = [
+    url_for('static', filename='accuracy_plot.png'),
+    url_for('static', filename='loss_plot.png'),
+    url_for('static', filename='confusion_matrix.png'),
+    url_for('static', filename='f1-scor.jpeg')
+]
     content = ['Accuracy Graph', 'Loss Graph', 'Confusion Matrix', 'F1-Score']
     return render_template('graph.html', images=images, content=content)
 
