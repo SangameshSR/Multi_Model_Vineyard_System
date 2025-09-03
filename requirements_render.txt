@@ -1,5 +1,8 @@
 Flask==3.1.0
 gunicorn==23.0.0
-setuptools
-wheel
-opencv-python
+opencv-python-headless
+tensorflow
+pillow
+numpy
+pandas
+scikit-learn
